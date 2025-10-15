@@ -2,9 +2,9 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
 	content: [
-		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
-		"./components/**/*.{js,ts,jsx,tsx,mdx}",
-		"./app/**/*.{js,ts,jsx,tsx,mdx}",
+		"./pages/**/*.{js,ts,jsx,tsx}",
+		"./components/**/*.{js,ts,jsx,tsx}",
+		"./app/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
 		extend: {
@@ -18,15 +18,17 @@ const config: Config = {
 					600: "#2F6FEB",
 				},
 			},
-		},
-		keyframes: {
-			shimmer: {
-				"100%": {
-					transform: "translateX(100%)",
+			keyframes: {
+				shimmer: {
+					"100%": { transform: "translateX(100%)" },
 				},
+			},
+			animation: {
+				shimmer: "shimmer 1.5s infinite",
 			},
 		},
 	},
 	plugins: [require("@tailwindcss/forms")],
 };
+
 export default config;
